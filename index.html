@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trees for Planet, Profit, and Future | Greening Kenya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --secondary: #81c784;
+            --accent: #ffb74d;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+        }
+        
+        .tree-counter {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pillar-card {
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .impact-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .impact-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 42%;
+            transition: width 1s ease;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sdg-icon {
+            width: 60px;
+            height: 60px;
+            transition: transform 0.3s ease;
+        }
+        
+        .sdg-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .donate-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .donate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(46, 125, 50, 0.6);
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-tree text-3xl text-green-700 mr-2"></i>
+                <a href="#" class="text-2xl font-bold text-green-800">TPPF</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-700 hover:text-green-700 font-medium">About</a>
+                <a href="#problem" class="nav-link text-gray-700 hover:text-green-700 font-medium">The Problem</a>
+                <a href="#solution" class="nav-link text-gray-700 hover:text-green-700 font-medium">Solution</a>
+                <a href="#impact" class="nav-link text-gray-700 hover:text-green-700 font-medium">Impact</a>
+                <a href="#partners" class="nav-link text-gray-700 hover:text-green-700 font-medium">Partners</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-green-700 font-medium">Contact</a>
+            </div>
+            <button class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero flex items-center justify-center text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Trees for Planet, Profit, and Future</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light">Greening Our Land. Feeding Our People. Securing Our Future.</p>
+            <div class="max-w-3xl mx-auto mb-10">
+                <p class="text-lg mb-8">Planting one million fruit trees across Kenya by 2025 to restore degraded lands, combat climate change, and create sustainable livelihoods.</p>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <a href="#donate" class="donate-btn px-8 py-3 rounded-full text-white font-bold text-lg">Donate Now</a>
+                    <a href="#about" class="bg-white px-8 py-3 rounded-full text-green-700 font-bold text-lg border-2 border-green-700 hover:bg-green-50 transition">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tree Counter -->
+    <section class="tree-counter text-white py-8 -mt-16 relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto rounded-xl p-6">
+                <h2 class="text-2xl font-bold mb-4 text-center">Our Progress Towards 1 Million Trees</h2>
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="text-center mb-4 md:mb-0">
+                        <div class="text-4xl font-bold">420,000</div>
+                        <div class="text-lg">Trees Planted</div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="flex justify-between mt-2">
+                            <span>0</span>
+                            <span>1,000,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">About Our Initiative</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <p class="text-lg mb-6">In the heart of Kenya, where communities face the double threat of climate change and economic hardship, a single fruit tree can mean more than shade — it can mean a family's livelihood, a child's meal, and a cleaner atmosphere for generations to come.</p>
+                    <p class="text-lg mb-6">Trees for Planet, Profit, and Future is a community-driven initiative with one bold goal: to plant one million fruit trees across Kenya by 2025. This project will restore degraded lands, sequester thousands of tonnes of CO₂, and create sustainable livelihoods for women and youth — all while improving food security and biodiversity.</p>
+                    <p class="text-lg">We invite sponsors to join us in this transformative journey. Together, we can make Kenya greener, communities stronger, and our planet healthier.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Community planting trees" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-green-800 mb-6 text-center">Our Alignment with UN Sustainable Development Goals</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-4 justify-items-center">
+                    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2018/09/E_SDG_Icons-01.jpg" alt="No Poverty" class="sdg-icon rounded-full">
+                    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2018/09/E_SDG_Icons-02.jpg" alt="Zero Hunger" class="sdg-icon rounded-full">
+                    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2018/09/E_SDG_Icons-03.jpg" alt="Good Health" class="sdg-icon rounded-full">
+                    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2018/09/E_SDG_Icons-08.jpg" alt="Decent Work" class="sdg-icon rounded-full">
+                    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2018/09/E_SDG_Icons-13.jpg" alt="Climate Action" class="sdg-icon rounded-full">
+                    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2018/09/E_SDG_Icons-15.jpg" alt="Life on Land" class="sdg-icon rounded-full">
+                    <img src="https://www.un.org/sustainabledevelopment/wp-content/uploads/2018/09/E_SDG_Icons-17.jpg" alt="Partnerships" class="sdg-icon rounded-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem Section -->
+    <section id="problem" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">The Challenges We Face</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                    <div class="text-red-500 text-4xl mb-4">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-800 mb-3">Climate Vulnerability</h3>
+                    <p class="text-gray-700">Kenya faces increased droughts, heatwaves, and floods due to declining forest cover, making communities more vulnerable to climate shocks.</p>
+                </div>
+                
+                <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                    <div class="text-yellow-500 text-4xl mb-4">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-yellow-800 mb-3">Food Insecurity</h3>
+                    <p class="text-gray-700">Millions lack consistent access to nutritious food as agricultural lands degrade and traditional food sources diminish.</p>
+                </div>
+                
+                <div class="bg-gray-100 p-6 rounded-lg border-l-4 border-gray-500">
+                    <div class="text-gray-500 text-4xl mb-4">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Economic Instability</h3>
+                    <p class="text-gray-700">Rural communities depend on unsustainable practices like charcoal burning for income, further exacerbating environmental degradation.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-green-50 p-8 rounded-lg border-l-4 border-green-600">
+                <h3 class="text-2xl font-bold text-green-800 mb-4">The Global Impact</h3>
+                <p class="text-lg">Globally, deforestation contributes to 10–15% of greenhouse gas emissions. Without urgent action, Kenya's ecosystems — and the communities that depend on them — will face irreversible damage. Our initiative addresses these challenges head-on with sustainable, community-centered solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Our Three-Pillar Solution</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="pillar-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="text-green-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-800 mb-4 text-center">For Planet</h3>
+                    <p class="text-gray-700">Restore biodiversity, improve soil quality, and sequester CO₂ through strategic tree planting across degraded lands in Kenya.</p>
+                </div>
+                
+                <div class="pillar-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="text-green-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-800 mb-4 text-center">For Profit</h3>
+                    <p class="text-gray-700">Create sustainable income streams by selling fruits, decorative plants, and seedlings to generate income for local communities.</p>
+                </div>
+                
+                <div class="pillar-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="text-green-600 text-5xl mb-6 text-center">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-800 mb-4 text-center">For Future</h3>
+                    <p class="text-gray-700">Ensure that future generations inherit a greener, healthier, and more resilient planet through environmental education and sustainable practices.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-green-800 mb-6 text-center">Our Project Objectives</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="impact-item">
+                        <h4 class="text-lg font-bold text-green-700 mb-2">Nursery Establishment</h4>
+                        <p class="text-gray-700">Establish a 10 million seedling nursery in Kajiado County with modern irrigation systems.</p>
+                    </div>
+                    <div class="impact-item">
+                        <h4 class="text-lg font-bold text-green-700 mb-2">Vegetation Cover</h4>
+                        <p class="text-gray-700">Achieve 10% tree & vegetation cover in target counties to combat desertification.</p>
+                    </div>
+                    <div class="impact-item">
+                        <h4 class="text-lg font-bold text-green-700 mb-2">Economic Empowerment</h4>
+                        <p class="text-gray-700">Create sustainable income for at least 500 women and youth by 2025 through agroforestry.</p>
+                    </div>
+                    <div class="impact-item">
+                        <h4 class="text-lg font-bold text-green-700 mb-2">Environmental Education</h4>
+                        <p class="text-gray-700">Raise environmental awareness in 50 schools and communities through our "Adopt a Tree" program.</p>
+                    </div>
+                    <div class="impact-item">
+                        <h4 class="text-lg font-bold text-green-700 mb-2">Carbon Sequestration</h4>
+                        <p class="text-gray-700">Sequester 200 tonnes of CO₂ annually from fruit trees planted in Year 1 of the project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Our Expected Impact</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-green-800 mb-3">Environmental Impact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>200 tonnes CO₂ sequestered annually</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Soil enrichment and improved water retention</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Restored biodiversity in degraded areas</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-800 mb-3">Social Impact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>500+ women and youth economically empowered</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Schools equipped with fruit trees for nutrition</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>Improved food security for thousands</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-purple-50 p-6 rounded-lg">
+                    <div class="text-purple-600 text-4xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-purple-800 mb-3">Economic Impact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-purple-500 mt-1 mr-2"></i>
+                            <span>Sale of fruits as sustainable income streams</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-purple-500 mt-1 mr-2"></i>
+                            <span>Seedlings and decorative plants for local markets</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-purple-500 mt-1 mr-2"></i>
+                            <span>Reduced dependency on charcoal production</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-green-100 p-8 rounded-lg">
+                <h3 class="text-2xl font-bold text-green-800 mb-4 text-center">Why Partner With Us?</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <div class="bg-green-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-green-800 mb-2">CSR Alignment</h4>
+                            <p class="text-gray-700">Direct contribution to climate action, poverty reduction, and community development aligned with your corporate social responsibility goals.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-green-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-green-800 mb-2">Brand Visibility</h4>
+                            <p class="text-gray-700">Your logo on all materials, social media campaigns, press releases, and co-branded community planting events.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-green-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-green-800 mb-2">Long-Term Impact</h4>
+                            <p class="text-gray-700">Trees grow for decades, providing continuous visibility and benefits that extend far beyond the initial investment.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-green-600 text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-green-800 mb-2">Community Connection</h4>
+                            <p class="text-gray-700">Opportunities for staff volunteer days at planting events, fostering team building while making a tangible difference.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Our Trusted Partners</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <div class="bg-white p-6 rounded-lg shadow-sm flex justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Kenya_Forest_Service_logo.svg/1200px-Kenya_Forest_Service_logo.svg.png" alt="Kenya Forest Service" class="h-16 object-contain">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm flex justify-center">
+                    <img src="https://kefri.org/wp-content/uploads/2020/06/kefri-logo.png" alt="KEFRI" class="h-16 object-contain">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm flex justify-center">
+                    <img src="https://www.environment.go.ke/wp-content/uploads/2020/06/cropped-MENR_Logo-1.png" alt="Ministry of Environment" class="h-16 object-contain">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm flex justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/United_Nations_logo.svg/2560px-United_Nations_logo.svg.png" alt="UN" class="h-16 object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
